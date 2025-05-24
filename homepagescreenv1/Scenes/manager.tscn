@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6tfvlu73124r"]
+
+[ext_resource type="PackedScene" uid="uid://bdu8b8d6wc27b" path="res://Scenes/battle scene.tscn" id="2_uscr2"]
+
+[sub_resource type="GDScript" id="GDScript_453op"]
+script/source = "extends Node2D
+@export var battle_scene : PackedScene
+var encounter_number : int = 100:
+	set(value):
+		encounter_number = value 
+		%Encounter.text = str(value)
+	
+func _ready():
+	randomize()
+	encounter_number = randi_range(25,50)
+
+func change_scene():
+	get_tree().change_scene_to_packed(battle_scene)
+	encounter_number = randi_range(25,50)
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_uscr2"]
+
+[node name="Manager" type="Node2D"]
+script = SubResource("GDScript_453op")
+battle_scene = ExtResource("2_uscr2")
+
+[node name="Debug" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Debug"]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 107.0
+offset_bottom = 41.0
+
+[node name="Label" type="Label" parent="Debug/HBoxContainer"]
+layout_mode = 2
+
+[node name="Encounter" type="Label" parent="Debug/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Encounter at:"
+label_settings = SubResource("LabelSettings_uscr2")

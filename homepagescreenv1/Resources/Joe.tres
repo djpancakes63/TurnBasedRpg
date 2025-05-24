@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Character" load_steps=6 format=3 uid="uid://dqm7wdnpo7tlw"]
+
+[ext_resource type="Script" uid="uid://bmnova02tbmue" path="res://Scenes/Character.gd" id="1_i1qg3"]
+[ext_resource type="PackedScene" uid="uid://5j73gg70fa23" path="res://Scenes/vfx.tscn" id="2_g271y"]
+[ext_resource type="Texture2D" uid="uid://dko6lxb5gyyrn" path="res://Character sprites/Puny-Characters/Character 2 face.png" id="3_6ldcr"]
+[ext_resource type="Texture2D" uid="uid://dht8ihrk5d2wp" path="res://Character sprites/Puny-Characters/Character 2 whole body.png" id="4_g271y"]
+
+[sub_resource type="Resource" id="Resource_i4age"]
+script = ExtResource("1_i1qg3")
+max_health = 100
+title = ""
+agility = 0
+vfx_node = ExtResource("2_g271y")
+metadata/_custom_type_script = "uid://bmnova02tbmue"
+
+[resource]
+script = ExtResource("1_i1qg3")
+max_health = 100
+Character = SubResource("Resource_i4age")
+title = "Joe"
+icon = ExtResource("3_6ldcr")
+texture = ExtResource("4_g271y")
+agility = 4
+vfx_node = ExtResource("2_g271y")
+metadata/_custom_type_script = "uid://bmnova02tbmue"

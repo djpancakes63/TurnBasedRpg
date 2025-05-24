@@ -1,0 +1,73 @@
+~ main
+
+if global.given_npc_item == false
+	Mark: [[Hi|Hello|Sup]]... How may I be of service at the moment?
+	
+	- Who are you?
+		Mark: I'm just.... Jello, duhh!
+		Mark: Jello with an attitude!
+		
+		- I think I have something for you.
+			Mark: Oh..... Really?
+			
+			- Yes, I found something with your name on it?!!!
+				if global.found_npc_item == true:
+					Mark: Ahhh, an item for me? I must have dropped it somewhere... silly me lol lol lol, thank you so much!
+					set global.given_npc_item = true
+					
+					set global.in_dialogue = false
+					set global.npc_in_range = false
+					=> END
+				else:
+					Mark: Ahhh, weird it has my name, but that's not mine!
+					Mark: Thanks for letting me know!
+					set global.in_dialogue = false
+					set global.npc_in_range = false
+					=> END
+			
+			- No, I lied lol! 
+				set global.in_dialogue = false
+				set global.npc_in_range = false
+				=> END
+		
+		- Goodbye.
+			Mark: Alright then, take care!
+			set global.in_dialogue = false
+			set global.npc_in_range = false
+			=> END
+
+	- I think I have something for you.
+		Mark: Oh..... Really?
+		
+		- Yes, I found something with your name on it?!!!
+			if global.found_npc_item == true:
+				Mark: Ahhh, an item for me? I must have dropped it somewhere... silly me lol lol lol, thank you so much!
+				set global.given_npc_item = true
+				set global.in_dialogue = false
+				set global.npc_in_range = false
+				=> END
+			else:
+				Mark: Ahhh, weird it has my name, but that's not mine!
+				Mark: Thanks for letting me know!
+				set global.in_dialogue = false
+				set global.npc_in_range = false
+				=> END
+		
+		- No, I lied lol!
+			set global.in_dialogue = false
+			set global.npc_in_range = false
+			=> END
+	
+	- Goodbye.
+		Mark: Alright then, see you later!
+		set global.in_dialogue = false
+		set global.npc_in_range = false
+		=> END
+
+else:
+	Mark: [[Hi|Hello|Howdy]], thank you so much for finding my chest!
+	Mark: I don't know what I would have done without you!
+	Mark: I am working on a massive surprise for you!
+	set global.in_dialogue = false
+	set global.npc_in_range = false
+	=> END

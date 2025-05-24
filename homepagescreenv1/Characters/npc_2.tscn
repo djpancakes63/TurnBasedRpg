@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://eqdkb0ks0kpi"]
+
+[ext_resource type="Script" uid="uid://dxep4nprqw311" path="res://Script Folder/npc_2.gd" id="1_88fjt"]
+[ext_resource type="Texture2D" uid="uid://3et8jw15gmlp" path="res://Character sprites/Puny-Characters/Orc-Peon-Red.png" id="1_nxqb8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88fjt"]
+atlas = ExtResource("1_nxqb8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqxq6"]
+atlas = ExtResource("1_nxqb8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_decul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88fjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqxq6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xkphj"]
+radius = 8.0
+
+[node name="npc2" type="CharacterBody2D"]
+script = ExtResource("1_88fjt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_decul")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_xkphj")

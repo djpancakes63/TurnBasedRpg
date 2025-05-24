@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://802fkxo3ca1i"]
+
+[ext_resource type="Texture2D" uid="uid://cj4b1cmrrs0ik" path="res://AssetsfortheParallaxscreen/Blackgroundv3.jpg" id="1_wv1o2"]
+[ext_resource type="Texture2D" uid="uid://bljtsuv34h4mj" path="res://AssetsfortheParallaxscreen/Layer_0005_5.png" id="2_l5kmv"]
+[ext_resource type="Texture2D" uid="uid://iflha4d521fd" path="res://AssetsfortheParallaxscreen/Smoking_guy-removebg-preview.png" id="3_yhg1q"]
+[ext_resource type="Texture2D" uid="uid://du5jf8a274w6f" path="res://AssetsfortheParallaxscreen/transparent-gif-glitter-3-removebg-preview.png" id="4_j8hu3"]
+[ext_resource type="Script" uid="uid://cch6is8nx2lwq" path="res://AssetsfortheParallaxscreen/sparkles.gd" id="5_m6rtt"]
+
+[node name="Parallax" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [-3414.0]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0, 0)
+
+[node name="Backgroundv2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-8.00006, -21)
+scale = Vector2(0.609375, 0.771297)
+texture = ExtResource("1_wv1o2")
+centered = false
+
+[node name="Foregroundv2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(9, -1026)
+scale = Vector2(1.2069, 2.3367)
+texture = ExtResource("2_l5kmv")
+centered = false
+
+[node name="Characterv2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.687215, 0.687215, 0.687215, 1)
+position = Vector2(708, 560)
+scale = Vector2(0.4, 0.245)
+texture = ExtResource("3_yhg1q")
+centered = false
+
+[node name="Sparkles" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(13, 27)
+scale = Vector2(2.00175, 1.76201)
+texture = ExtResource("4_j8hu3")
+centered = false
+script = ExtResource("5_m6rtt")

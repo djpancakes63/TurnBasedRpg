@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://hv5jsltacahe"]
+
+[ext_resource type="AudioStream" uid="uid://sspm8pj1k2vq" path="res://Music and sounds/Sketchbook 2024-11-30.ogg" id="1_qpe7w"]
+
+[node name="World_music" type="AudioStreamPlayer"]
+stream = ExtResource("1_qpe7w")
+volume_db = -37.819
+autoplay = true

@@ -1,0 +1,54 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="HomepageScreenv1"
+run/main_scene="uid://1n223h8bxjlj"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+global="*res://Script Folder/global.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+EventHandler="*res://event_handler.gd"
+EventBus="*res://Script Folder/event_bus.gd"
+BgMusic="*res://Music and sounds/bg_music.tscn"
+WorldMusic="*res://Music and sounds/world_music.tscn"
+BattleMusic="*res://Music and sounds/battle_music.tscn"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://addons/balloon.tscn"
+
+[display]
+
+window/size/viewport_height=800
+window/size/mode=2
+window/size/initial_screen=22222222222222
+window/stretch/mode="viewport"
+window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[input]
+
+action={
+"deadzone": 0.2,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":1,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialogue folder/npc.dialogue", "res://Dialogue folder/npc2.dialogue", "res://Dialogue folder/enemy.dialogue")

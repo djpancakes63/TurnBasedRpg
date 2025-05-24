@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Character" load_steps=6 format=3 uid="uid://dl23hpg1qw2cd"]
+
+[ext_resource type="Script" uid="uid://bmnova02tbmue" path="res://Scenes/Character.gd" id="1_3mak8"]
+[ext_resource type="PackedScene" uid="uid://5j73gg70fa23" path="res://Scenes/vfx.tscn" id="2_ew7yd"]
+[ext_resource type="Texture2D" uid="uid://dp8f7s6het7ch" path="res://Character sprites/Puny-Characters/Character 1 face.png" id="3_w2h58"]
+[ext_resource type="Texture2D" uid="uid://csrmb6vawm8u" path="res://Character sprites/Puny-Characters/Character 1 whole body.png" id="4_ew7yd"]
+
+[sub_resource type="Resource" id="Resource_05jj4"]
+script = ExtResource("1_3mak8")
+max_health = 100
+title = ""
+agility = 0
+vfx_node = ExtResource("2_ew7yd")
+metadata/_custom_type_script = "uid://bmnova02tbmue"
+
+[resource]
+script = ExtResource("1_3mak8")
+max_health = 100
+Character = SubResource("Resource_05jj4")
+title = "Megan"
+icon = ExtResource("3_w2h58")
+texture = ExtResource("4_ew7yd")
+agility = 1
+vfx_node = ExtResource("2_ew7yd")
+metadata/_custom_type_script = "uid://bmnova02tbmue"

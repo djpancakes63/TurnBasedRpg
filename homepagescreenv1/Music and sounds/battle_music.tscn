@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0626ixj8hww1"]
+
+[ext_resource type="AudioStream" uid="uid://csfviq8qihxxy" path="res://Music and sounds/Calling_Of_Drake.wav" id="1_i7cd3"]
+
+[node name="Battle_music" type="AudioStreamPlayer"]
+stream = ExtResource("1_i7cd3")
+volume_db = -17.223
+autoplay = true

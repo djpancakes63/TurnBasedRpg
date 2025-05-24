@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://bgrkb80hhlxbs"]
+
+[ext_resource type="Script" uid="uid://bmnova02tbmue" path="res://Scenes/Character.gd" id="1_eh4ll"]
+[ext_resource type="PackedScene" uid="uid://5j73gg70fa23" path="res://Scenes/vfx.tscn" id="2_ojvdu"]
+[ext_resource type="Texture2D" uid="uid://drdtoxql4qldg" path="res://Character sprites/Puny-Characters/Warrior-Red-close-up.png" id="3_ojvdu"]
+
+[sub_resource type="Resource" id="Resource_15iu6"]
+script = ExtResource("1_eh4ll")
+max_health = 100
+title = ""
+agility = 0
+vfx_node = ExtResource("2_ojvdu")
+metadata/_custom_type_script = "uid://bmnova02tbmue"
+
+[resource]
+script = ExtResource("1_eh4ll")
+max_health = 100
+Character = SubResource("Resource_15iu6")
+title = "Bob's Friend"
+icon = ExtResource("3_ojvdu")
+texture = ExtResource("3_ojvdu")
+agility = 10
+vfx_node = ExtResource("2_ojvdu")
+metadata/_custom_type_script = "uid://bmnova02tbmue"

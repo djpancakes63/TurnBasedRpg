@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://1n223h8bxjlj"]
+
+[ext_resource type="PackedScene" uid="uid://802fkxo3ca1i" path="res://AssetsfortheParallaxscreen/parallax.tscn" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://4neykb24313" path="res://Script Folder/main_menu.gd" id="1_7vrkn"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vrkn")
+
+[node name="Parallax" parent="." instance=ExtResource("1_06t4h")]
+position = Vector2(88, 143)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+modulate = Color(0.270222, 0.270222, 0.270222, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 696.0
+offset_right = 479.0
+offset_bottom = 797.0
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game
+"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit Game"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

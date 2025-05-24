@@ -1,0 +1,223 @@
+[gd_scene load_steps=14 format=3 uid="uid://bdu8b8d6wc27b"]
+
+[ext_resource type="Script" uid="uid://tv5adojs4fhj" path="res://Script Folder/battle_scene.gd" id="1_rknjq"]
+[ext_resource type="Texture2D" uid="uid://doi3q1qind08g" path="res://Resources/Battle_Scene_picture.webp" id="2_kda83"]
+[ext_resource type="PackedScene" uid="uid://cylwkmu0wjptc" path="res://Script Folder/enemy_button.tscn" id="2_pjkvs"]
+[ext_resource type="Script" uid="uid://noqpu02t6rrp" path="res://Script Folder/attack.gd" id="3_pjkvs"]
+[ext_resource type="Script" uid="uid://cvhhlef8kt7ux" path="res://Script Folder/run.gd" id="4_5vcy1"]
+[ext_resource type="Script" uid="uid://ff4ysw741w6r" path="res://Scenes/haste.gd" id="5_5vcy1"]
+[ext_resource type="Script" uid="uid://b3yfaouuuu66j" path="res://Script Folder/CharacterSprite.gd" id="5_gwvgg"]
+[ext_resource type="Resource" uid="uid://d2wfr04ivdp0m" path="res://Resources/Nadab.tres" id="6_woxn1"]
+[ext_resource type="Resource" uid="uid://di7rfuacxeyaw" path="res://Resources/Joshua.tres" id="7_glft5"]
+[ext_resource type="Resource" uid="uid://dl23hpg1qw2cd" path="res://Resources/Megan.tres" id="8_25nvr"]
+[ext_resource type="Resource" uid="uid://bp34v2y8sfm65" path="res://Resources/Bob.tres" id="9_lchrr"]
+[ext_resource type="Resource" uid="uid://dqm7wdnpo7tlw" path="res://Resources/Joe.tres" id="12_dict3"]
+[ext_resource type="Resource" uid="uid://bgrkb80hhlxbs" path="res://Resources/Bob's Friend.tres" id="12_kda83"]
+
+[node name="Battle Scene" type="Node2D" node_paths=PackedStringArray("player_group", "enemy_group", "timeline", "options")]
+script = ExtResource("1_rknjq")
+player_group = NodePath("Players")
+enemy_group = NodePath("Enemies")
+timeline = NodePath("UI/Timeline")
+options = NodePath("UI/Options")
+enemy_button = ExtResource("2_pjkvs")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(-5, 2)
+scale = Vector2(0.601563, 0.455211)
+texture = ExtResource("2_kda83")
+centered = false
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Options" type="VBoxContainer" parent="UI"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.5
+offset_top = -110.0
+offset_right = 81.5
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Attack" type="Button" parent="UI/Options"]
+layout_mode = 2
+text = "Attack"
+script = ExtResource("3_pjkvs")
+
+[node name="Haste" type="Button" parent="UI/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Haste
+"
+script = ExtResource("5_5vcy1")
+
+[node name="Run" type="Button" parent="UI/Options"]
+layout_mode = 2
+text = "Run 
+"
+script = ExtResource("4_5vcy1")
+
+[node name="EnemySelection" type="VBoxContainer" parent="UI"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -44.0
+offset_right = 53.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Timeline" type="HBoxContainer" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_right = 42.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TimelineSlot" type="Panel" parent="UI/Timeline"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Timeline/TimelineSlot"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TimelineSlot2" type="Panel" parent="UI/Timeline"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Timeline/TimelineSlot2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TimelineSlot3" type="Panel" parent="UI/Timeline"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Timeline/TimelineSlot3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TimelineSlot4" type="Panel" parent="UI/Timeline"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Timeline/TimelineSlot4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TimelineSlot5" type="Panel" parent="UI/Timeline"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Timeline/TimelineSlot5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TimelineSlot6" type="Panel" parent="UI/Timeline"]
+custom_minimum_size = Vector2(175, 175)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Timeline/TimelineSlot6"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Player" type="Sprite2D" parent="Players"]
+position = Vector2(887, 294)
+scale = Vector2(3, 3)
+script = ExtResource("5_gwvgg")
+character = ExtResource("6_woxn1")
+
+[node name="ProgressBar1" type="ProgressBar" parent="Players/Player"]
+offset_left = -11.0
+offset_top = -20.0
+offset_right = 38.0
+offset_bottom = 7.0
+scale = Vector2(0.5, 0.5)
+value = 100.0
+allow_greater = true
+allow_lesser = true
+fill_mode = 2
+
+[node name="Player2" type="Sprite2D" parent="Players"]
+position = Vector2(887, 436)
+scale = Vector2(3, 3)
+script = ExtResource("5_gwvgg")
+character = ExtResource("7_glft5")
+
+[node name="ProgressBar2" type="ProgressBar" parent="Players/Player2"]
+offset_left = -10.3333
+offset_top = -22.6667
+offset_right = 33.6667
+offset_bottom = 4.33333
+scale = Vector2(0.5, 0.5)
+value = 100.0
+
+[node name="Player3" type="Sprite2D" parent="Players"]
+position = Vector2(887, 600)
+scale = Vector2(3, 3)
+script = ExtResource("5_gwvgg")
+character = ExtResource("8_25nvr")
+
+[node name="ProgressBar3" type="ProgressBar" parent="Players/Player3"]
+offset_left = -9.66667
+offset_top = -19.6667
+offset_right = 30.3333
+offset_bottom = 7.33333
+scale = Vector2(0.5, 0.5)
+value = 100.0
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" type="Sprite2D" parent="Enemies"]
+position = Vector2(159, 279)
+scale = Vector2(3, 3)
+script = ExtResource("5_gwvgg")
+character = ExtResource("9_lchrr")
+
+[node name="Enemy2" type="Sprite2D" parent="Enemies"]
+position = Vector2(159, 436)
+scale = Vector2(3, 3)
+script = ExtResource("5_gwvgg")
+character = ExtResource("12_kda83")
+
+[node name="Enemy3" type="Sprite2D" parent="Enemies"]
+position = Vector2(159, 600)
+scale = Vector2(3, 3)
+script = ExtResource("5_gwvgg")
+character = ExtResource("12_dict3")
+
+[connection signal="pressed" from="UI/Options/Attack" to="UI/Options/Attack" method="_on_pressed"]
+[connection signal="pressed" from="UI/Options/Haste" to="UI/Options/Haste" method="_on_pressed"]
+[connection signal="pressed" from="UI/Options/Run" to="UI/Options/Run" method="_on_pressed"]

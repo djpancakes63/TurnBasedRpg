@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cylwkmu0wjptc"]
+
+[ext_resource type="Script" uid="uid://xo4pijra0v8n" path="res://Script Folder/EnemyButton.gd" id="1_7ovu2"]
+
+[node name="EnemyButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_7ovu2")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,18 @@
+~ start
+Enemy: [[Hi|Hello|Howdy]], this is some dialogue.
+Nathan: Here are some choices.
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again => start
+- End the conversation and Fight
+	Enemy: Well I guess we are going to have it out.
+	set global.fight = true
+	set global.in_dialogue = false
+	set global.npc_in_range = false
+	=> END
+Nathan: For more information see the online documentation.
+set global.in_dialogue = false
+set global.npc_in_range = false
+=> END

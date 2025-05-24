@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Character" load_steps=5 format=3 uid="uid://d2wfr04ivdp0m"]
+
+[ext_resource type="PackedScene" uid="uid://5j73gg70fa23" path="res://Scenes/vfx.tscn" id="2_8trhp"]
+[ext_resource type="Script" uid="uid://bmnova02tbmue" path="res://Scenes/Character.gd" id="2_ox06r"]
+[ext_resource type="Texture2D" uid="uid://b6qeyd1ykjetm" path="res://Character sprites/Puny-Characters/Mage-Red-close-up.png" id="3_ox06r"]
+
+[sub_resource type="Resource" id="Resource_esmcp"]
+script = ExtResource("2_ox06r")
+max_health = 100
+title = ""
+agility = 0
+vfx_node = ExtResource("2_8trhp")
+metadata/_custom_type_script = "uid://bmnova02tbmue"
+
+[resource]
+script = ExtResource("2_ox06r")
+max_health = 100
+Character = SubResource("Resource_esmcp")
+title = "Nadab"
+icon = ExtResource("3_ox06r")
+texture = ExtResource("3_ox06r")
+agility = 12
+vfx_node = ExtResource("2_8trhp")
+metadata/_custom_type_script = "uid://bmnova02tbmue"

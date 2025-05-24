@@ -1,0 +1,29 @@
+~ start
+
+if global.given_npc_item == false
+	John the Goblin : [[Hi|Hello]] you are surely not from these parts.
+	
+	- Who are you?
+		John the Goblin: I'm John the Goblin and I like to run around. 
+		John the Goblin: I am just a average Goblin
+		=> Dialogue_Cont1
+		
+	~ Dialogue_Cont1	
+	- Where are we?
+		John the Goblin: We are in the Capstone Realm!
+		- Capstone Realm?
+			John the Goblin: Alright I am not a tour guide... Hehe jk jk I don't know man, I am just a kid!XD
+			set global.in_dialogue = false
+			set global.npc_in_range = false
+			=> END
+		-Goodbye
+		set global.in_dialogue = false
+		set global.npc_in_range = false
+		=> END
+			
+	
+	- Goodbye.
+		John the Goblin: Alright then, see you later!
+		set global.in_dialogue = false
+		set global.npc_in_range = false
+		=> END

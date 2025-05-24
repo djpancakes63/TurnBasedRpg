@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://b036khlw5oslm"]
+
+[ext_resource type="Texture2D" uid="uid://bwkbasx0g01kg" path="res://Character sprites/Puny-Characters/Orc-Grunt.png" id="1_ideak"]
+[ext_resource type="Script" uid="uid://b0ihcnugktjbr" path="res://Script Folder/npc.gd" id="1_xxcha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxcha"]
+atlas = ExtResource("1_ideak")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh24r"]
+atlas = ExtResource("1_ideak")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ul7y6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxcha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh24r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bc6q4"]
+
+[node name="npc" type="CharacterBody2D" groups=["NPC"]]
+scale = Vector2(2, 2)
+script = ExtResource("1_xxcha")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ul7y6")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bc6q4")
